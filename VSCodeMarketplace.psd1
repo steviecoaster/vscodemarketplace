@@ -27,7 +27,7 @@ Author = 'Stephen Valdinger'
 CompanyName = ''
 
 # Copyright statement for this module
-Copyright = '(c) Stephen Valdinger. All rights reserved.'
+Copyright = '(c) 2026 Stephen Valdinger. Licensed under the MIT License.'
 
 # Description of the functionality provided by this module
 Description = 'A wrapper for the VSCode marketplace that allows searching, saving, installing, and uninstalling VSCode extensions'
@@ -103,10 +103,10 @@ PrivateData = @{
         # Tags = @()
 
         # A URL to the license for this module.
-        # LicenseUri = ''
+        LicenseUri = 'https://github.com/steviecoaster/VSCodeMarketplace/blob/main/LICENSE'
 
         # A URL to the main website for this project.
-        # ProjectUri = ''
+        ProjectUri = 'https://github.com/steviecoaster/VSCodeMarketplace'
 
         # A URL to an icon representing this module.
         # IconUri = ''
