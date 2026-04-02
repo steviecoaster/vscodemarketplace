@@ -20,7 +20,7 @@ function Uninstall-VSCodeExtension {
 
     Uninstalls the GitLens extension from VS Code.
 #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/VSCodeMarketplace/VSCodeMarketplace/Uninstall-VSCodeExtension/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/vscodemarketplace/VSCodeMarketplace/Uninstall-VSCodeExtension/')]
     Param(
         [Parameter(Mandatory)]
         [String]

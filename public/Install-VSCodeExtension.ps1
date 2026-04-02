@@ -51,7 +51,7 @@ function Install-VSCodeExtension {
 
     Installs a locally available VSIX file.
 #>
-    [CmdletBinding(DefaultParameterSetName = 'extension', HelpUri = 'https://steviecoaster.github.io/VSCodeMarketplace/VSCodeMarketplace/Install-VSCodeExtension/')]
+    [CmdletBinding(DefaultParameterSetName = 'extension', HelpUri = 'https://steviecoaster.github.io/vscodemarketplace/VSCodeMarketplace/Install-VSCodeExtension/')]
     Param(
         [Parameter(Mandatory, ValueFromPipeline, ParameterSetName = 'extension')]
         [PSCustomObject]

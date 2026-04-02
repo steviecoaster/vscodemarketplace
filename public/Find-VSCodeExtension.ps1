@@ -78,7 +78,7 @@ function Find-VSCodeExtension {
 .NOTES
     API reference: https://github.com/microsoft/vscode/blob/main/src/vs/platform/extensionManagement/common/extensionGalleryService.ts
 #>
-    [CmdletBinding(DefaultParameterSetName = 'fuzzy', HelpUri = 'https://steviecoaster.github.io/VSCodeMarketplace/VSCodeMarketplace/Find-VSCodeExtension/')]
+    [CmdletBinding(DefaultParameterSetName = 'fuzzy', HelpUri = 'https://steviecoaster.github.io/vscodemarketplace/VSCodeMarketplace/Find-VSCodeExtension/')]
     param(
         [Parameter(Mandatory, Position = 0, ParameterSetName = 'fuzzy')]
         [string]

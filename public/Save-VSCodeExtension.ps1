@@ -52,7 +52,7 @@ function Save-VSCodeExtension {
 
     Extracts the VsixUrl from search results and passes it directly via -Url.
 #>
-    [CmdletBinding(DefaultParameterSetName = 'extension', HelpUri = 'https://steviecoaster.github.io/VSCodeMarketplace/VSCodeMarketplace/Save-VSCodeExtension/')]
+    [CmdletBinding(DefaultParameterSetName = 'extension', HelpUri = 'https://steviecoaster.github.io/vscodemarketplace/VSCodeMarketplace/Save-VSCodeExtension/')]
     param(
         [Parameter(Mandatory, ValueFromPipeline, ParameterSetName = 'extension')]
         [PSCustomObject[]]

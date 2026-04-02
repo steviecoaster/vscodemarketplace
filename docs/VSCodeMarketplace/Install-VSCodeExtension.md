@@ -1,7 +1,7 @@
 ---
 document type: cmdlet
 external help file: VSCodeMarketPlace-Help.xml
-HelpUri: 'https://steviecoaster.github.io/VSCodeMarketplace/VSCodeMarketplace/Install-VSCodeExtension/'
+HelpUri: 'https://steviecoaster.github.io/vscodemarketplace/VSCodeMarketplace/Install-VSCodeExtension/'
 Locale: en-US
 Module Name: VSCodeMarketPlace
 ms.date: 04/01/2026

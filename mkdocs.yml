@@ -1,5 +1,5 @@
 site_name: VSCodeMarketplace
-repo_url: https://github.com/steviecoaster/VSCodeMarketplace
+repo_url: https://github.com/steviecoaster/vscodemarketplace
 docs_dir: docs
 
 theme:
