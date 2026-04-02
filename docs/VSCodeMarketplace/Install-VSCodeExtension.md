@@ -19,21 +19,21 @@ Installs a VS Code extension using the Code CLI.
 
 ### extension (Default)
 
-```
+```powershell
 Install-VSCodeExtension -Extension <psobject> [-Destination <string>] [-CodeExecutable <string>]
  [<CommonParameters>]
 ```
 
 ### url
 
-```
+```powershell
 Install-VSCodeExtension -Url <string> [-Destination <string>] [-CodeExecutable <string>]
  [<CommonParameters>]
 ```
 
 ### file
 
-```
+```powershell
 Install-VSCodeExtension -File <string> [-Destination <string>] [-CodeExecutable <string>]
  [<CommonParameters>]
 ```
@@ -41,7 +41,7 @@ Install-VSCodeExtension -File <string> [-Destination <string>] [-CodeExecutable 
 ## ALIASES
 
 This cmdlet has the following aliases,
-  {{Insert list of aliases}}
+  None
 
 ## DESCRIPTION
 
@@ -62,19 +62,25 @@ If the URL ends in .vsix, it is treated as a local
 
 ### EXAMPLE 1
 
+```powershell
 Find-VSCodeExtension -ExtensionId 'eamodio.gitlens' | Install-VSCodeExtension -CodeExecutable 'C:\Program Files\Microsoft VS Code\bin\code.cmd'
+```
 
 Downloads and installs the latest GitLens extension.
 
 ### EXAMPLE 2
 
+```powershell
 Install-VSCodeExtension -Url 'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/eamodio/vsextensions/gitlens/16.3.0/vspackage' -CodeExecutable $codeExe
+```
 
 Downloads and installs a specific GitLens version.
 
 ### EXAMPLE 3
 
+```powershell
 Install-VSCodeExtension -File 'C:\packages\gitlens.vsix' -CodeExecutable $codeExe
+```
 
 Installs a locally available VSIX file.
 
@@ -204,7 +210,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-{{ Fill in the Description }}
+None
 
 ## OUTPUTS
 
@@ -212,5 +218,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-{{ Fill in the related links here }}
+None
 

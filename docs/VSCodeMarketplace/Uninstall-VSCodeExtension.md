@@ -19,14 +19,14 @@ Uninstalls a VS Code extension using the Code CLI.
 
 ### __AllParameterSets
 
-```
+```powershell
 Uninstall-VSCodeExtension [-Extension] <string> [[-CodeExecutable] <string>] [<CommonParameters>]
 ```
 
 ## ALIASES
 
 This cmdlet has the following aliases,
-  {{Insert list of aliases}}
+  None
 
 ## DESCRIPTION
 
@@ -40,7 +40,9 @@ publisher.extensionname format (e.g.
 
 ### EXAMPLE 1
 
+```powershell
 Uninstall-VSCodeExtension -Extension 'eamodio.gitlens' -CodeExecutable 'C:\Program Files\Microsoft VS Code\bin\code.cmd'
+```
 
 Uninstalls the GitLens extension from VS Code.
 
@@ -106,5 +108,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-{{ Fill in the related links here }}
+None
 

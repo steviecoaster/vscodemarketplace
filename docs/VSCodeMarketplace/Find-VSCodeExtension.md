@@ -19,13 +19,13 @@ Searches the Visual Studio Code Marketplace via the public Gallery API.
 
 ### fuzzy (Default)
 
-```
+```powershell
 Find-VSCodeExtension [-Query] <string> [-PageSize <int>] [-SortBy <string>] [<CommonParameters>]
 ```
 
 ### exact
 
-```
+```powershell
 Find-VSCodeExtension -ExtensionId <string> [-Version <string>] [-PageSize <int>] [-SortBy <string>]
  [<CommonParameters>]
 ```
@@ -33,7 +33,7 @@ Find-VSCodeExtension -ExtensionId <string> [-Version <string>] [-PageSize <int>]
 ## ALIASES
 
 This cmdlet has the following aliases,
-  {{Insert list of aliases}}
+  None
 
 ## DESCRIPTION
 
@@ -56,31 +56,41 @@ Supports two modes of operation:
 
 ### EXAMPLE 1
 
+```powershell
 Find-VSCodeExtension -Query "git"
+```
 
 Text search returning the top 10 most relevant git-related extensions.
 
 ### EXAMPLE 2
 
+```powershell
 Find-VSCodeExtension -Query "python" -PageSize 20 -SortBy Downloads
+```
 
 Returns the top 20 Python extensions sorted by download count.
 
 ### EXAMPLE 3
 
+```powershell
 Find-VSCodeExtension -ExtensionId "eamodio.gitlens"
+```
 
 Exact lookup for GitLens, returning the latest published version.
 
 ### EXAMPLE 4
 
+```powershell
 Find-VSCodeExtension -ExtensionId "eamodio.gitlens" -Version "16.3.0"
+```
 
 Exact lookup for a specific version of GitLens.
 
 ### EXAMPLE 5
 
+```powershell
 Find-VSCodeExtension -ExtensionId "eamodio.gitlens" | Save-VSCodeExtension -Destination C:\vsix
+```
 
 Downloads the latest GitLens VSIX to C:\vsix.
 
@@ -226,7 +236,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### PSCustomObject with the following properties:
   Publisher
 
-{{ Fill in the Description }}
+None
 
 ## NOTES
 
@@ -235,5 +245,5 @@ API reference: https://github.com/microsoft/vscode/blob/main/src/vs/platform/ext
 
 ## RELATED LINKS
 
-{{ Fill in the related links here }}
+None
 

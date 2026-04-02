@@ -19,20 +19,20 @@ Downloads one or more VS Code extensions as VSIX files.
 
 ### extension (Default)
 
-```
+```powershell
 Save-VSCodeExtension -Extension <psobject[]> [-Destination <string>] [<CommonParameters>]
 ```
 
 ### url
 
-```
+```powershell
 Save-VSCodeExtension -Url <string[]> [-Destination <string>] [<CommonParameters>]
 ```
 
 ## ALIASES
 
 This cmdlet has the following aliases,
-  {{Insert list of aliases}}
+  None
 
 ## DESCRIPTION
 
@@ -51,27 +51,35 @@ In both modes, each downloaded file is returned as a FileInfo object.
 
 ### EXAMPLE 1
 
+```powershell
 Find-VSCodeExtension -Query "python" | Out-GridView -PassThru | Save-VSCodeExtension
+```
 
 Searches for Python-related extensions, lets the user pick from a grid view,
 and downloads the selected extensions to the current directory.
 
 ### EXAMPLE 2
 
+```powershell
 Find-VSCodeExtension -Query "git" -SortBy Downloads | Save-VSCodeExtension -Destination C:\vsix
+```
 
 Downloads the top git extensions by download count to C:\vsix.
 
 ### EXAMPLE 3
 
+```powershell
 Save-VSCodeExtension -Url "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/2025.4.0/vspackage"
+```
 
 Downloads a specific extension version directly using its vspackage URL.
 
 ### EXAMPLE 4
 
+```powershell
 $urls = (Find-VSCodeExtension -Query "pylance").VsixUrl
 Save-VSCodeExtension -Url $urls -Destination C:\vsix
+```
 
 Extracts the VsixUrl from search results and passes it directly via -Url.
 
@@ -156,17 +164,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject[]
 
-{{ Fill in the Description }}
+None
 
 ## OUTPUTS
 
 ### System.IO.FileInfo for each downloaded file.
 
-{{ Fill in the Description }}
+None
 
 ## NOTES
 
 ## RELATED LINKS
 
-{{ Fill in the related links here }}
+None
 
