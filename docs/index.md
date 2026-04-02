@@ -38,7 +38,7 @@ Uninstall-VSCodeExtension -Extension "eamodio.gitlens"
 
 | Command | Description |
 |---|---|
-| [Find-VSCodeExtension](VSCodeMarketPlace/Find-VSCodeExtension.md) | Search the VS Code Marketplace |
-| [Install-VSCodeExtension](VSCodeMarketPlace/Install-VSCodeExtension.md) | Install extensions via the `code` CLI |
-| [Save-VSCodeExtension](VSCodeMarketPlace/Save-VSCodeExtension.md) | Download extensions as VSIX files |
-| [Uninstall-VSCodeExtension](VSCodeMarketPlace/Uninstall-VSCodeExtension.md) | Uninstall extensions via the `code` CLI |
+| [Find-VSCodeExtension](VSCodeMarketplace/Find-VSCodeExtension.md) | Search the VS Code Marketplace |
+| [Install-VSCodeExtension](VSCodeMarketplace/Install-VSCodeExtension.md) | Install extensions via the `code` CLI |
+| [Save-VSCodeExtension](VSCodeMarketplace/Save-VSCodeExtension.md) | Download extensions as VSIX files |
+| [Uninstall-VSCodeExtension](VSCodeMarketplace/Uninstall-VSCodeExtension.md) | Uninstall extensions via the `code` CLI |
