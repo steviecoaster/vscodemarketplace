@@ -129,7 +129,7 @@
           <li class="breadcrumb-item">VSCodeMarketplace</li>
       <li class="breadcrumb-item active">Find-VSCodeExtension</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/steviecoaster/VSCodeMarketplace/edit/master/docs/VSCodeMarketplace/Find-VSCodeExtension.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/steviecoaster/vscodemarketplace/edit/master/docs/VSCodeMarketplace/Find-VSCodeExtension.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -142,15 +142,15 @@
 <p>Searches the Visual Studio Code Marketplace via the public Gallery API.</p>
 <h2 id="syntax">SYNTAX</h2>
 <h3 id="fuzzy-default">fuzzy (Default)</h3>
-<pre><code>Find-VSCodeExtension [-Query] &lt;string&gt; [-PageSize &lt;int&gt;] [-SortBy &lt;string&gt;] [&lt;CommonParameters&gt;]
+<pre><code class="language-powershell">Find-VSCodeExtension [-Query] &lt;string&gt; [-PageSize &lt;int&gt;] [-SortBy &lt;string&gt;] [&lt;CommonParameters&gt;]
 </code></pre>
 <h3 id="exact">exact</h3>
-<pre><code>Find-VSCodeExtension -ExtensionId &lt;string&gt; [-Version &lt;string&gt;] [-PageSize &lt;int&gt;] [-SortBy &lt;string&gt;]
+<pre><code class="language-powershell">Find-VSCodeExtension -ExtensionId &lt;string&gt; [-Version &lt;string&gt;] [-PageSize &lt;int&gt;] [-SortBy &lt;string&gt;]
  [&lt;CommonParameters&gt;]
 </code></pre>
 <h2 id="aliases">ALIASES</h2>
 <p>This cmdlet has the following aliases,
-  {{Insert list of aliases}}</p>
+  None</p>
 <h2 id="description">DESCRIPTION</h2>
 <p>Queries the VS Code Marketplace extension gallery and returns matching
 extensions with key metadata such as publisher, name, version, download
@@ -171,19 +171,24 @@ count, and VSIX download URL.</p>
 </ul>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<p>Find-VSCodeExtension -Query "git"</p>
+<pre><code class="language-powershell">Find-VSCodeExtension -Query &quot;git&quot;
+</code></pre>
 <p>Text search returning the top 10 most relevant git-related extensions.</p>
 <h3 id="example-2">EXAMPLE 2</h3>
-<p>Find-VSCodeExtension -Query "python" -PageSize 20 -SortBy Downloads</p>
+<pre><code class="language-powershell">Find-VSCodeExtension -Query &quot;python&quot; -PageSize 20 -SortBy Downloads
+</code></pre>
 <p>Returns the top 20 Python extensions sorted by download count.</p>
 <h3 id="example-3">EXAMPLE 3</h3>
-<p>Find-VSCodeExtension -ExtensionId "eamodio.gitlens"</p>
+<pre><code class="language-powershell">Find-VSCodeExtension -ExtensionId &quot;eamodio.gitlens&quot;
+</code></pre>
 <p>Exact lookup for GitLens, returning the latest published version.</p>
 <h3 id="example-4">EXAMPLE 4</h3>
-<p>Find-VSCodeExtension -ExtensionId "eamodio.gitlens" -Version "16.3.0"</p>
+<pre><code class="language-powershell">Find-VSCodeExtension -ExtensionId &quot;eamodio.gitlens&quot; -Version &quot;16.3.0&quot;
+</code></pre>
 <p>Exact lookup for a specific version of GitLens.</p>
 <h3 id="example-5">EXAMPLE 5</h3>
-<p>Find-VSCodeExtension -ExtensionId "eamodio.gitlens" | Save-VSCodeExtension -Destination C:\vsix</p>
+<pre><code class="language-powershell">Find-VSCodeExtension -ExtensionId &quot;eamodio.gitlens&quot; | Save-VSCodeExtension -Destination C:\vsix
+</code></pre>
 <p>Downloads the latest GitLens VSIX to C:\vsix.</p>
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-extensionid">-ExtensionId</h3>
@@ -301,11 +306,11 @@ HelpMessage: ''
 <h2 id="outputs">OUTPUTS</h2>
 <h3 id="pscustomobject-with-the-following-properties">PSCustomObject with the following properties:</h3>
 <p>Publisher</p>
-<p>{{ Fill in the Description }}</p>
+<p>None</p>
 <h2 id="notes">NOTES</h2>
 <p>API reference: https://github.com/microsoft/vscode/blob/main/src/vs/platform/extensionManagement/common/extensionGalleryService.ts</p>
 <h2 id="related-links">RELATED LINKS</h2>
-<p>{{ Fill in the related links here }}</p>
+<p>None</p>
               
             </div>
           </div><footer>
@@ -334,7 +339,7 @@ HelpMessage: ''
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/steviecoaster/VSCodeMarketplace" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/steviecoaster/vscodemarketplace" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     

@@ -127,7 +127,7 @@
           <li class="breadcrumb-item">VSCodeMarketplace</li>
       <li class="breadcrumb-item active">Save-VSCodeExtension</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/steviecoaster/VSCodeMarketplace/edit/master/docs/VSCodeMarketplace/Save-VSCodeExtension.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/steviecoaster/vscodemarketplace/edit/master/docs/VSCodeMarketplace/Save-VSCodeExtension.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -140,14 +140,14 @@
 <p>Downloads one or more VS Code extensions as VSIX files.</p>
 <h2 id="syntax">SYNTAX</h2>
 <h3 id="extension-default">extension (Default)</h3>
-<pre><code>Save-VSCodeExtension -Extension &lt;psobject[]&gt; [-Destination &lt;string&gt;] [&lt;CommonParameters&gt;]
+<pre><code class="language-powershell">Save-VSCodeExtension -Extension &lt;psobject[]&gt; [-Destination &lt;string&gt;] [&lt;CommonParameters&gt;]
 </code></pre>
 <h3 id="url">url</h3>
-<pre><code>Save-VSCodeExtension -Url &lt;string[]&gt; [-Destination &lt;string&gt;] [&lt;CommonParameters&gt;]
+<pre><code class="language-powershell">Save-VSCodeExtension -Url &lt;string[]&gt; [-Destination &lt;string&gt;] [&lt;CommonParameters&gt;]
 </code></pre>
 <h2 id="aliases">ALIASES</h2>
 <p>This cmdlet has the following aliases,
-  {{Insert list of aliases}}</p>
+  None</p>
 <h2 id="description">DESCRIPTION</h2>
 <p>Downloads VS Code extensions as VSIX files to a specified destination folder.
 Supports two modes of operation:</p>
@@ -164,18 +164,22 @@ Supports two modes of operation:</p>
 <p>In both modes, each downloaded file is returned as a FileInfo object.</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<p>Find-VSCodeExtension -Query "python" | Out-GridView -PassThru | Save-VSCodeExtension</p>
+<pre><code class="language-powershell">Find-VSCodeExtension -Query &quot;python&quot; | Out-GridView -PassThru | Save-VSCodeExtension
+</code></pre>
 <p>Searches for Python-related extensions, lets the user pick from a grid view,
 and downloads the selected extensions to the current directory.</p>
 <h3 id="example-2">EXAMPLE 2</h3>
-<p>Find-VSCodeExtension -Query "git" -SortBy Downloads | Save-VSCodeExtension -Destination C:\vsix</p>
+<pre><code class="language-powershell">Find-VSCodeExtension -Query &quot;git&quot; -SortBy Downloads | Save-VSCodeExtension -Destination C:\vsix
+</code></pre>
 <p>Downloads the top git extensions by download count to C:\vsix.</p>
 <h3 id="example-3">EXAMPLE 3</h3>
-<p>Save-VSCodeExtension -Url "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/2025.4.0/vspackage"</p>
+<pre><code class="language-powershell">Save-VSCodeExtension -Url &quot;https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ms-python/vsextensions/python/2025.4.0/vspackage&quot;
+</code></pre>
 <p>Downloads a specific extension version directly using its vspackage URL.</p>
 <h3 id="example-4">EXAMPLE 4</h3>
-<p>$urls = (Find-VSCodeExtension -Query "pylance").VsixUrl
-Save-VSCodeExtension -Url $urls -Destination C:\vsix</p>
+<pre><code class="language-powershell">$urls = (Find-VSCodeExtension -Query &quot;pylance&quot;).VsixUrl
+Save-VSCodeExtension -Url $urls -Destination C:\vsix
+</code></pre>
 <p>Extracts the VsixUrl from search results and passes it directly via -Url.</p>
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-destination">-Destination</h3>
@@ -241,13 +245,13 @@ HelpMessage: ''
 <a href="https://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
 <h2 id="inputs">INPUTS</h2>
 <h3 id="systemmanagementautomationpsobject">System.Management.Automation.PSObject[]</h3>
-<p>{{ Fill in the Description }}</p>
+<p>None</p>
 <h2 id="outputs">OUTPUTS</h2>
 <h3 id="systemiofileinfo-for-each-downloaded-file">System.IO.FileInfo for each downloaded file.</h3>
-<p>{{ Fill in the Description }}</p>
+<p>None</p>
 <h2 id="notes">NOTES</h2>
 <h2 id="related-links">RELATED LINKS</h2>
-<p>{{ Fill in the related links here }}</p>
+<p>None</p>
               
             </div>
           </div><footer>
@@ -276,7 +280,7 @@ HelpMessage: ''
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/steviecoaster/VSCodeMarketplace" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/steviecoaster/vscodemarketplace" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     
