@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Install-VSCodeExtension - VSCodeMarketplace</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Install-VSCodeExtension";
+        var mkdocs_page_input_path = "VSCodeMarketplace\\Install-VSCodeExtension.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> VSCodeMarketplace
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">VSCodeMarketplace</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Find-VSCodeExtension/">Find-VSCodeExtension</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Install-VSCodeExtension</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#extension-default">extension (Default)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#url">url</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file">file</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aliases">ALIASES</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-3">EXAMPLE 3</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-codeexecutable">-CodeExecutable</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-destination">-Destination</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-extension">-Extension</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-file">-File</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-url">-Url</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#systemmanagementautomationpsobject">System.Management.Automation.PSObject</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Save-VSCodeExtension/">Save-VSCodeExtension</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Uninstall-VSCodeExtension/">Uninstall-VSCodeExtension</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">VSCodeMarketplace</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">VSCodeMarketplace</li>
+      <li class="breadcrumb-item active">Install-VSCodeExtension</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/steviecoaster/VSCodeMarketplace/edit/master/docs/VSCodeMarketplace/Install-VSCodeExtension.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="install-vscodeextension">Install-VSCodeExtension</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>Installs a VS Code extension using the Code CLI.</p>
+<h2 id="syntax">SYNTAX</h2>
+<h3 id="extension-default">extension (Default)</h3>
+<pre><code>Install-VSCodeExtension -Extension &lt;psobject&gt; [-Destination &lt;string&gt;] [-CodeExecutable &lt;string&gt;]
+ [&lt;CommonParameters&gt;]
+</code></pre>
+<h3 id="url">url</h3>
+<pre><code>Install-VSCodeExtension -Url &lt;string&gt; [-Destination &lt;string&gt;] [-CodeExecutable &lt;string&gt;]
+ [&lt;CommonParameters&gt;]
+</code></pre>
+<h3 id="file">file</h3>
+<pre><code>Install-VSCodeExtension -File &lt;string&gt; [-Destination &lt;string&gt;] [-CodeExecutable &lt;string&gt;]
+ [&lt;CommonParameters&gt;]
+</code></pre>
+<h2 id="aliases">ALIASES</h2>
+<p>This cmdlet has the following aliases,
+  {{Insert list of aliases}}</p>
+<h2 id="description">DESCRIPTION</h2>
+<p>Installs a VS Code extension in one of three ways:</p>
+<ul>
+<li>
+<p>Extension mode: accepts an extension object returned by Find-VSCodeExtension,
+  downloads the VSIX to the Chocolatey tools directory, and installs it.</p>
+</li>
+<li>
+<p>URL mode: accepts a raw VS Code Marketplace vspackage URL and downloads the
+  VSIX before installing.
+If the URL ends in .vsix, it is treated as a local
+  file path (used by Chocolatey's Package Internalizer after internalization)
+  and installed directly without downloading.</p>
+</li>
+<li>
+<p>File mode: accepts a path to an existing .vsix file and installs it directly.</p>
+</li>
+</ul>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="example-1">EXAMPLE 1</h3>
+<p>Find-VSCodeExtension -ExtensionId 'eamodio.gitlens' | Install-VSCodeExtension -CodeExecutable 'C:\Program Files\Microsoft VS Code\bin\code.cmd'</p>
+<p>Downloads and installs the latest GitLens extension.</p>
+<h3 id="example-2">EXAMPLE 2</h3>
+<p>Install-VSCodeExtension -Url 'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/eamodio/vsextensions/gitlens/16.3.0/vspackage' -CodeExecutable $codeExe</p>
+<p>Downloads and installs a specific GitLens version.</p>
+<h3 id="example-3">EXAMPLE 3</h3>
+<p>Install-VSCodeExtension -File 'C:\packages\gitlens.vsix' -CodeExecutable $codeExe</p>
+<p>Installs a locally available VSIX file.</p>
+<h2 id="parameters">PARAMETERS</h2>
+<h3 id="-codeexecutable">-CodeExecutable</h3>
+<p>Path to the VS Code CLI executable (e.g.
+code.exe or code-insiders.exe).</p>
+<pre><code class="language-yaml">Type: System.String
+DefaultValue: ((Get-Command code).Source)
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+</code></pre>
+<h3 id="-destination">-Destination</h3>
+<p>The folder used to store the downloaded VSIX before installation.
+Defaults to $env:TEMP.
+In Chocolatey scripts, pass $toolsDir.</p>
+<pre><code class="language-yaml">Type: System.String
+DefaultValue: $env:TEMP
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: (All)
+  Position: Named
+  IsRequired: false
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+</code></pre>
+<h3 id="-extension">-Extension</h3>
+<p>An extension object returned by Find-VSCodeExtension.
+Accepts pipeline input.
+Cannot be combined with -Url or -File.</p>
+<pre><code class="language-yaml">Type: System.Management.Automation.PSObject
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: extension
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: true
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+</code></pre>
+<h3 id="-file">-File</h3>
+<p>Path to a local .vsix file to install directly.
+Cannot be combined with -Extension or -Url.</p>
+<pre><code class="language-yaml">Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: file
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+</code></pre>
+<h3 id="-url">-Url</h3>
+<p>A raw VS Code Marketplace vspackage URL, or a local path to a .vsix file
+(as substituted by Chocolatey's Package Internalizer).
+Cannot be combined with -Extension or -File.</p>
+<pre><code class="language-yaml">Type: System.String
+DefaultValue: ''
+SupportsWildcards: false
+Aliases: []
+ParameterSets:
+- Name: url
+  Position: Named
+  IsRequired: true
+  ValueFromPipeline: false
+  ValueFromPipelineByPropertyName: false
+  ValueFromRemainingArguments: false
+DontShow: false
+AcceptedValues: []
+HelpMessage: ''
+</code></pre>
+<h3 id="commonparameters">CommonParameters</h3>
+<p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+-ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+<a href="https://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
+<h2 id="inputs">INPUTS</h2>
+<h3 id="systemmanagementautomationpsobject">System.Management.Automation.PSObject</h3>
+<p>{{ Fill in the Description }}</p>
+<h2 id="outputs">OUTPUTS</h2>
+<h2 id="notes">NOTES</h2>
+<h2 id="related-links">RELATED LINKS</h2>
+<p>{{ Fill in the related links here }}</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Find-VSCodeExtension/" class="btn btn-neutral float-left" title="Find-VSCodeExtension"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Save-VSCodeExtension/" class="btn btn-neutral float-right" title="Save-VSCodeExtension">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/steviecoaster/VSCodeMarketplace" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../Find-VSCodeExtension/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Save-VSCodeExtension/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
