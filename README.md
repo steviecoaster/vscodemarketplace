@@ -46,6 +46,7 @@ Import-Module .\VSCodeMarketplace\VSCodeMarketPlace.psd1
 | [`Save-VSCodeExtension`](#save-vscodeextension) | Download extensions as VSIX files |
 | [`Install-VSCodeExtension`](#install-vscodeextension) | Install extensions via the `code` CLI |
 | [`Uninstall-VSCodeExtension`](#uninstall-vscodeextension) | Uninstall extensions via the `code` CLI |
+| [`Get-VSCodeExtension`](#get-vscodeextension) | List locally installed VS Code extensions |
 
 ---
 
@@ -194,6 +195,52 @@ Uninstall-VSCodeExtension -Extension <string> [-CodeExecutable <string>]
 ```powershell
 # Uninstall GitLens
 Uninstall-VSCodeExtension -Extension "eamodio.gitlens"
+
+# Uninstall multiple extensions directly
+Uninstall-VSCodeExtension -Extension "eamodio.gitlens","ms-python.python"
+
+# Pipe from Get-VSCodeExtension
+Get-VSCodeExtension -ExtensionId "eamodio.gitlens" | Uninstall-VSCodeExtension
+
+# Uninstall all extensions from a specific publisher
+Get-VSCodeExtension | Where-Object Name -like 'ms-python.*' | Uninstall-VSCodeExtension
+```
+
+---
+
+### Get-VSCodeExtension
+
+Returns VS Code extensions currently installed in the local VS Code instance by invoking the `code --list-extensions` CLI command.
+
+**Syntax**
+
+```powershell
+Get-VSCodeExtension [[-ExtensionId] <string[]>] [-IncludeVersions]
+```
+
+**Parameters**
+
+| Parameter | Description | Default |
+|---|---|---|
+| `-ExtensionId` | Filter to specific extension ID(s) in `publisher.name` format | All installed extensions |
+| `-IncludeVersions` | Populate the `Version` property via `--show-versions` | `$false` |
+
+**Output properties:** `Name`, `Version`
+
+**Examples**
+
+```powershell
+# List all installed extensions
+Get-VSCodeExtension
+
+# List all installed extensions with versions
+Get-VSCodeExtension -IncludeVersions
+
+# Check if a specific extension is installed
+Get-VSCodeExtension -ExtensionId "eamodio.gitlens" -IncludeVersions
+
+# Pipe to Uninstall-VSCodeExtension
+Get-VSCodeExtension -ExtensionId "eamodio.gitlens" | Uninstall-VSCodeExtension
 ```
 
 ---

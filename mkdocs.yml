@@ -12,3 +12,4 @@ nav:
     - Install-VSCodeExtension: VSCodeMarketplace/Install-VSCodeExtension.md
     - Save-VSCodeExtension: VSCodeMarketplace/Save-VSCodeExtension.md
     - Uninstall-VSCodeExtension: VSCodeMarketplace/Uninstall-VSCodeExtension.md
+    - Get-VSCodeExtension: VSCodeMarketplace/Get-VSCodeExtension.md

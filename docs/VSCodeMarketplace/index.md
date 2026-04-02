@@ -25,3 +25,7 @@ Downloads one or more VS Code extensions as `.vsix` files. Useful for offline or
 ### [Uninstall-VSCodeExtension](Uninstall-VSCodeExtension.md)
 
 Uninstalls a VS Code extension by its `publisher.name` ID using the Code CLI.
+
+### [Get-VSCodeExtension](Get-VSCodeExtension.md)
+
+Returns VS Code extensions currently installed in the local VS Code instance. Supports optional version retrieval and filtering by extension ID.
