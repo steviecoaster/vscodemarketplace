@@ -1,0 +1,14 @@
+site_name: VSCodeMarketplace
+repo_url: https://github.com/steviecoaster/VSCodeMarketplace
+docs_dir: docs
+
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
+  - VSCodeMarketplace:
+    - Find-VSCodeExtension: VSCodeMarketplace/Find-VSCodeExtension.md
+    - Install-VSCodeExtension: VSCodeMarketplace/Install-VSCodeExtension.md
+    - Save-VSCodeExtension: VSCodeMarketplace/Save-VSCodeExtension.md
+    - Uninstall-VSCodeExtension: VSCodeMarketplace/Uninstall-VSCodeExtension.md
