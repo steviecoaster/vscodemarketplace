@@ -54,7 +54,7 @@ function Get-VSCodeExtension {
     Requires the `code` CLI to be available on the system PATH.
     Output objects are pipeline-compatible with Uninstall-VSCodeExtension.
 #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/vscodemarketplace/VSCodeMarketplace/Get-VSCodeExtension/')]
     Param(
 
         [Parameter()]
