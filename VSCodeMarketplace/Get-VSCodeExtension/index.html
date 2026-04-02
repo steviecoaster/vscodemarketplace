@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Find-VSCodeExtension - VSCodeMarketplace</title>
+    <title>Get-VSCodeExtension - VSCodeMarketplace</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Find-VSCodeExtension";
-        var mkdocs_page_input_path = "VSCodeMarketplace\\Find-VSCodeExtension.md";
+        var mkdocs_page_name = "Get-VSCodeExtension";
+        var mkdocs_page_input_path = "VSCodeMarketplace\\Get-VSCodeExtension.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -45,17 +45,19 @@
               </ul>
               <p class="caption"><span class="caption-text">VSCodeMarketplace</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Find-VSCodeExtension</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../Find-VSCodeExtension/">Find-VSCodeExtension</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Install-VSCodeExtension/">Install-VSCodeExtension</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Save-VSCodeExtension/">Save-VSCodeExtension</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Uninstall-VSCodeExtension/">Uninstall-VSCodeExtension</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Get-VSCodeExtension</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#fuzzy-default">fuzzy (Default)</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#exact">exact</a>
-    </li>
-        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aliases">ALIASES</a>
     </li>
@@ -71,21 +73,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#example-4">EXAMPLE 4</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#example-5">EXAMPLE 5</a>
-    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#-extensionid">-ExtensionId</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-pagesize">-PageSize</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-query">-Query</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-sortby">-SortBy</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-version">-Version</a>
+    <li class="toctree-l3"><a class="reference internal" href="#-includeversions">-IncludeVersions</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
     </li>
@@ -105,14 +99,6 @@
     </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Install-VSCodeExtension/">Install-VSCodeExtension</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Save-VSCodeExtension/">Save-VSCodeExtension</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Uninstall-VSCodeExtension/">Uninstall-VSCodeExtension</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../Get-VSCodeExtension/">Get-VSCodeExtension</a>
-                  </li>
               </ul>
       </div>
     </div>
@@ -129,9 +115,9 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">VSCodeMarketplace</li>
-      <li class="breadcrumb-item active">Find-VSCodeExtension</li>
+      <li class="breadcrumb-item active">Get-VSCodeExtension</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/steviecoaster/vscodemarketplace/edit/master/docs/VSCodeMarketplace/Find-VSCodeExtension.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/steviecoaster/vscodemarketplace/edit/master/docs/VSCodeMarketplace/Get-VSCodeExtension.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -139,88 +125,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="find-vscodeextension">Find-VSCodeExtension</h1>
+                <h1 id="get-vscodeextension">Get-VSCodeExtension</h1>
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>Searches the Visual Studio Code Marketplace via the public Gallery API.</p>
+<p>Returns VS Code extensions currently installed in the local VS Code instance.</p>
 <h2 id="syntax">SYNTAX</h2>
-<h3 id="fuzzy-default">fuzzy (Default)</h3>
-<pre><code class="language-powershell">Find-VSCodeExtension [-Query] &lt;string&gt; [-PageSize &lt;int&gt;] [-SortBy &lt;string&gt;] [&lt;CommonParameters&gt;]
-</code></pre>
-<h3 id="exact">exact</h3>
-<pre><code class="language-powershell">Find-VSCodeExtension -ExtensionId &lt;string&gt; [-Version &lt;string&gt;] [-PageSize &lt;int&gt;] [-SortBy &lt;string&gt;]
- [&lt;CommonParameters&gt;]
+<pre><code class="language-powershell">Get-VSCodeExtension [[-ExtensionId] &lt;string[]&gt;] [-IncludeVersions] [&lt;CommonParameters&gt;]
 </code></pre>
 <h2 id="aliases">ALIASES</h2>
 <p>This cmdlet has the following aliases,
   None</p>
 <h2 id="description">DESCRIPTION</h2>
-<p>Queries the VS Code Marketplace extension gallery and returns matching
-extensions with key metadata such as publisher, name, version, download
-count, and VSIX download URL.</p>
-<p>Supports two modes of operation:</p>
-<ul>
-<li>
-<p>Fuzzy mode (-Query): performs a text search across the marketplace,
-  returning up to -PageSize results ranked by the chosen sort order.</p>
-</li>
-<li>
-<p>Exact mode (-ExtensionId): performs a precise lookup by qualified
-  extension name (publisher.extensionname), returning only that extension.
-  Optionally, -Version can be used to resolve a specific version; if the
-  requested version is not found, the latest version is returned with a
-  warning.</p>
-</li>
-</ul>
+<p>Retrieves the list of VS Code extensions installed in the current user's
+VS Code environment by invoking the <code>code --list-extensions</code> CLI command.</p>
+<p>By default, each extension object has a Name property (the qualified
+publisher.extensionname ID) and an empty Version property. Use
+-IncludeVersions to populate the Version property with the installed
+version string.</p>
+<p>Optionally, -ExtensionId can be used to filter results to one or more
+specific extensions by their qualified publisher.extensionname ID.</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="language-powershell">Find-VSCodeExtension -Query &quot;git&quot;
+<pre><code class="language-powershell">Get-VSCodeExtension
 </code></pre>
-<p>Text search returning the top 10 most relevant git-related extensions.</p>
+<p>Returns all installed extensions with the Name property populated and Version empty.</p>
 <h3 id="example-2">EXAMPLE 2</h3>
-<pre><code class="language-powershell">Find-VSCodeExtension -Query &quot;python&quot; -PageSize 20 -SortBy Downloads
+<pre><code class="language-powershell">Get-VSCodeExtension -IncludeVersions
 </code></pre>
-<p>Returns the top 20 Python extensions sorted by download count.</p>
+<p>Returns all installed extensions with both Name and Version populated.</p>
 <h3 id="example-3">EXAMPLE 3</h3>
-<pre><code class="language-powershell">Find-VSCodeExtension -ExtensionId &quot;eamodio.gitlens&quot;
+<pre><code class="language-powershell">Get-VSCodeExtension -ExtensionId &quot;eamodio.gitlens&quot; -IncludeVersions
 </code></pre>
-<p>Exact lookup for GitLens, returning the latest published version.</p>
+<p>Returns only the GitLens extension entry with version information included.</p>
 <h3 id="example-4">EXAMPLE 4</h3>
-<pre><code class="language-powershell">Find-VSCodeExtension -ExtensionId &quot;eamodio.gitlens&quot; -Version &quot;16.3.0&quot;
+<pre><code class="language-powershell">Get-VSCodeExtension -ExtensionId &quot;eamodio.gitlens&quot; | Uninstall-VSCodeExtension
 </code></pre>
-<p>Exact lookup for a specific version of GitLens.</p>
-<h3 id="example-5">EXAMPLE 5</h3>
-<pre><code class="language-powershell">Find-VSCodeExtension -ExtensionId &quot;eamodio.gitlens&quot; | Save-VSCodeExtension -Destination C:\vsix
-</code></pre>
-<p>Downloads the latest GitLens VSIX to C:\vsix.</p>
+<p>Retrieves the GitLens extension object and pipes it to Uninstall-VSCodeExtension to remove it.</p>
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-extensionid">-ExtensionId</h3>
-<p>The qualified extension name in publisher.extensionname format
-(e.g.
-'eamodio.gitlens').
-Performs an exact lookup.
-Cannot be combined
-with -Query.</p>
-<pre><code class="language-yaml">Type: System.String
+<p>One or more qualified extension IDs in publisher.extensionname format
+(e.g. 'eamodio.gitlens') to filter the results. If omitted, all installed
+extensions are returned.</p>
+<pre><code class="language-yaml">Type: System.String[]
 DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: exact
-  Position: Named
-  IsRequired: true
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-</code></pre>
-<h3 id="-pagesize">-PageSize</h3>
-<p>Number of results to return in fuzzy mode.
-Defaults to 10, max 100.
-Has no effect in exact mode since only one extension is returned.</p>
-<pre><code class="language-yaml">Type: System.Int32
-DefaultValue: 10
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
@@ -234,62 +180,16 @@ DontShow: false
 AcceptedValues: []
 HelpMessage: ''
 </code></pre>
-<h3 id="-query">-Query</h3>
-<p>The search term(s) to look for in the marketplace.
-Used for fuzzy/text
-search.
-Cannot be combined with -ExtensionId.</p>
-<pre><code class="language-yaml">Type: System.String
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: fuzzy
-  Position: 0
-  IsRequired: true
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-</code></pre>
-<h3 id="-sortby">-SortBy</h3>
-<p>Sort order for fuzzy mode results.
-Valid values:
-  Relevance     - Best match for the search query (default)
-  Downloads     - Most downloaded extensions
-  Rating        - Highest rated extensions
-  PublishedDate - Newest extensions</p>
-<pre><code class="language-yaml">Type: System.String
-DefaultValue: Relevance
+<h3 id="-includeversions">-IncludeVersions</h3>
+<p>When specified, retrieves version information alongside each extension name
+by passing --show-versions to the code CLI. Without this switch the Version
+property on each returned object will be empty.</p>
+<pre><code class="language-yaml">Type: System.Management.Automation.SwitchParameter
+DefaultValue: False
 SupportsWildcards: false
 Aliases: []
 ParameterSets:
 - Name: (All)
-  Position: Named
-  IsRequired: false
-  ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
-  ValueFromRemainingArguments: false
-DontShow: false
-AcceptedValues: []
-HelpMessage: ''
-</code></pre>
-<h3 id="-version">-Version</h3>
-<p>The specific version to resolve when using -ExtensionId
-(e.g.
-'16.3.0').
-If omitted, the latest version is returned.
-If the
-requested version does not exist, falls back to latest with a warning.
-Only valid with -ExtensionId.</p>
-<pre><code class="language-yaml">Type: System.String
-DefaultValue: ''
-SupportsWildcards: false
-Aliases: []
-ParameterSets:
-- Name: exact
   Position: Named
   IsRequired: false
   ValueFromPipeline: false
@@ -305,20 +205,20 @@ HelpMessage: ''
 -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
 <a href="https://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
 <h2 id="inputs">INPUTS</h2>
+<p>None</p>
 <h2 id="outputs">OUTPUTS</h2>
 <h3 id="pscustomobject-with-the-following-properties">PSCustomObject with the following properties:</h3>
-<p>Publisher</p>
-<p>None</p>
+<p>Name    - The qualified publisher.extensionname ID<br />
+  Version - The installed version string (populated only when -IncludeVersions is used)</p>
 <h2 id="notes">NOTES</h2>
-<p>API reference: https://github.com/microsoft/vscode/blob/main/src/vs/platform/extensionManagement/common/extensionGalleryService.ts</p>
+<p>Requires the <code>code</code> CLI to be available on the system PATH.</p>
 <h2 id="related-links">RELATED LINKS</h2>
 <p>None</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Install-VSCodeExtension/" class="btn btn-neutral float-right" title="Install-VSCodeExtension">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Uninstall-VSCodeExtension/" class="btn btn-neutral float-left" title="Uninstall-VSCodeExtension"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -345,10 +245,8 @@ HelpMessage: ''
         </span>
     
     
-      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../Uninstall-VSCodeExtension/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../Install-VSCodeExtension/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

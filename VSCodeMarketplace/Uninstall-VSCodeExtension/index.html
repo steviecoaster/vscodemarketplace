@@ -69,6 +69,12 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-3">EXAMPLE 3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-4">EXAMPLE 4</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
@@ -82,6 +88,10 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pscustomobject">PSCustomObject</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
     </li>
@@ -90,6 +100,8 @@
     <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
     </li>
     </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Get-VSCodeExtension/">Get-VSCodeExtension</a>
                   </li>
               </ul>
       </div>
@@ -122,7 +134,7 @@
 <p>Uninstalls a VS Code extension using the Code CLI.</p>
 <h2 id="syntax">SYNTAX</h2>
 <h3 id="__allparametersets">__AllParameterSets</h3>
-<pre><code class="language-powershell">Uninstall-VSCodeExtension [-Extension] &lt;string&gt; [[-CodeExecutable] &lt;string&gt;] [&lt;CommonParameters&gt;]
+<pre><code class="language-powershell">Uninstall-VSCodeExtension [-Extension] &lt;string[]&gt; [[-CodeExecutable] &lt;string&gt;] [&lt;CommonParameters&gt;]
 </code></pre>
 <h2 id="aliases">ALIASES</h2>
 <p>This cmdlet has the following aliases,
@@ -135,9 +147,21 @@ publisher.extensionname format (e.g.
 'eamodio.gitlens').</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="language-powershell">Uninstall-VSCodeExtension -Extension 'eamodio.gitlens' -CodeExecutable 'C:\Program Files\Microsoft VS Code\bin\code.cmd'
+<pre><code class="language-powershell">Uninstall-VSCodeExtension -Extension 'eamodio.gitlens'
 </code></pre>
 <p>Uninstalls the GitLens extension from VS Code.</p>
+<h3 id="example-2">EXAMPLE 2</h3>
+<pre><code class="language-powershell">Uninstall-VSCodeExtension -Extension 'eamodio.gitlens','ms-python.python'
+</code></pre>
+<p>Uninstalls multiple extensions in a single call by passing an array directly.</p>
+<h3 id="example-3">EXAMPLE 3</h3>
+<pre><code class="language-powershell">Get-VSCodeExtension -ExtensionId 'eamodio.gitlens' | Uninstall-VSCodeExtension
+</code></pre>
+<p>Retrieves the installed GitLens extension object and pipes it directly to Uninstall-VSCodeExtension.</p>
+<h3 id="example-4">EXAMPLE 4</h3>
+<pre><code class="language-powershell">Get-VSCodeExtension | Where-Object Name -like 'ms-python.*' | Uninstall-VSCodeExtension
+</code></pre>
+<p>Uninstalls all installed extensions whose publisher is ms-python.</p>
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-codeexecutable">-CodeExecutable</h3>
 <p>Path to the VS Code CLI executable (e.g.
@@ -158,19 +182,19 @@ AcceptedValues: []
 HelpMessage: ''
 </code></pre>
 <h3 id="-extension">-Extension</h3>
-<p>The qualified extension name to uninstall, in publisher.extensionname format
-(e.g.
-'eamodio.gitlens').</p>
-<pre><code class="language-yaml">Type: System.String
+<p>One or more qualified extension names to uninstall, in publisher.extensionname format
+(e.g. 'eamodio.gitlens'). Accepts multiple values and pipeline input by property name,
+mapping the Name property returned by Get-VSCodeExtension.</p>
+<pre><code class="language-yaml">Type: System.String[]
 DefaultValue: ''
 SupportsWildcards: false
-Aliases: []
+Aliases: [Name]
 ParameterSets:
 - Name: (All)
   Position: 0
   IsRequired: true
   ValueFromPipeline: false
-  ValueFromPipelineByPropertyName: false
+  ValueFromPipelineByPropertyName: true
   ValueFromRemainingArguments: false
 DontShow: false
 AcceptedValues: []
@@ -182,6 +206,8 @@ HelpMessage: ''
 -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
 <a href="https://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
 <h2 id="inputs">INPUTS</h2>
+<h3 id="pscustomobject">PSCustomObject</h3>
+<p>Objects returned by Get-VSCodeExtension. The Name property is bound to the -Extension parameter.</p>
 <h2 id="outputs">OUTPUTS</h2>
 <h2 id="notes">NOTES</h2>
 <h2 id="related-links">RELATED LINKS</h2>
@@ -191,6 +217,7 @@ HelpMessage: ''
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../Save-VSCodeExtension/" class="btn btn-neutral float-left" title="Save-VSCodeExtension"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Get-VSCodeExtension/" class="btn btn-neutral float-right" title="Get-VSCodeExtension">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -219,6 +246,8 @@ HelpMessage: ''
     
       <span><a href="../Save-VSCodeExtension/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../Get-VSCodeExtension/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
