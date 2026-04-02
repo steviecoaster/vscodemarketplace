@@ -17,10 +17,18 @@ A PowerShell module that wraps the Visual Studio Code Marketplace public Gallery
 
 ## Installation
 
-### From the PowerShell Gallery *(coming soon)*
+### From the PowerShell Gallery
+
+#### Windows PowerShell
 
 ```powershell
 Install-Module -Name VSCodeMarketplace
+```
+
+#### PowerShell 7+
+
+```powershell
+Install-PSResource VSCodeMarketplace
 ```
 
 ### Manually
