@@ -9,16 +9,14 @@
     <title>vscodemarketplace (Install)</title>
     <authors>Stephen Valdinger</authors>
     <projectUrl>https://github.com/steviecoaster/vscodemarketplace</projectUrl>
-    <!-- "Borrowing" icon from VSCode package, no sense reinventing the wheel-->
-    <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-packages@00a000c7e5d8cc0d8416468e164eef281f843bff/icons/vscode.png</iconUrl>  
-    <copyright>2026</copyright>
+    <iconUrl>https://cdn.jsdelivr.net/gh/steviecoaster/vscodemarketplace@main/chocolatey/icon/vscode.png</iconUrl>
     <licenseUrl>https://github.com/steviecoaster/vscodemarketplace/blob/main/LICENSE</licenseUrl>
     <projectSourceUrl>https://github.com/steviecoaster/vscodemarketplace</projectSourceUrl>
     <docsUrl>https://steviecoaster.github.io/vscodemarketplace/</docsUrl>
     <bugTrackerUrl>https://github.com/steviecoaster/vscodemarketplace/issues</bugTrackerUrl>
     <tags>vscodemarketplace powershell vscode extension</tags>
     <summary>A PowerShell module that wraps the Visual Studio Code Marketplace public Gallery API, letting you search, download, install, and uninstall VS Code extensions entirely from the command line.</summary>
-    <description><![CDATA[
+        <description><![CDATA[
 # VSCodeMarketplace
 
 A PowerShell module that wraps the Visual Studio Code Marketplace public Gallery API, letting you search, download, install, and uninstall VS Code extensions entirely from the command line.
@@ -27,7 +25,7 @@ A PowerShell module that wraps the Visual Studio Code Marketplace public Gallery
 
 - **Search** the Marketplace by keyword or exact extension ID
 - **Download** extensions as `.vsix` files for offline or air-gapped use
-- **Install** extensions directly via the `code` CLI — from a saved extension object, a VSIX URL, or a local file
+- **Install** extensions via the `code` CLI — from a pipeline object, a VSIX URL, or a local file
 - **Uninstall** extensions by ID using the `code` CLI
 - Pipeline support — find, save, and install in a single one-liner
 
@@ -40,43 +38,10 @@ A PowerShell module that wraps the Visual Studio Code Marketplace public Gallery
 
 ### Find-VSCodeExtension
 
-Queries the VS Code Marketplace Gallery API and returns matching extensions with key metadata. Supports fuzzy search by keyword and exact lookup by extension ID.
-
-**Syntax**
+Queries the VS Code Marketplace Gallery API and returns matching extensions. Supports fuzzy keyword search and exact lookup by extension ID. Key parameters: `-Query`, `-ExtensionId`, `-Version`, `-PageSize` (1-100, default `10`), `-SortBy` (`Relevance`, `Downloads`, `Rating`, `PublishedDate`).
 
 ```powershell
-# Fuzzy search
-Find-VSCodeExtension [-Query] <string> [-PageSize <int>] [-SortBy <string>]
-
-# Exact lookup
-Find-VSCodeExtension -ExtensionId <string> [-Version <string>] [-PageSize <int>] [-SortBy <string>]
-```
-
-**Parameters**
-
-| Parameter | Description | Default |
-|---|---|---|
-| `-Query` | Keyword to search for | *(required)* |
-| `-ExtensionId` | Exact `publisher.name` ID | *(required in exact mode)* |
-| `-Version` | Specific version to target | Latest |
-| `-PageSize` | Number of results (1–100) | `10` |
-| `-SortBy` | `Relevance`, `Downloads`, `Rating`, `PublishedDate` | `Relevance` |
-
-**Output properties:** `Publisher`, `ExtensionId`, `DisplayName`, `Version`, `TargetPlatforms`, `Downloads`, `Rating`, `Description`, `VsixUrl`
-
-**Examples**
-
-```powershell
-# Search by keyword
-Find-VSCodeExtension -Query "git"
-
-# Search sorted by most downloads, returning top 20
 Find-VSCodeExtension -Query "python" -PageSize 20 -SortBy Downloads
-
-# Look up a specific extension
-Find-VSCodeExtension -ExtensionId "eamodio.gitlens"
-
-# Look up a specific version
 Find-VSCodeExtension -ExtensionId "eamodio.gitlens" -Version "16.3.0"
 ```
 
@@ -84,78 +49,22 @@ Find-VSCodeExtension -ExtensionId "eamodio.gitlens" -Version "16.3.0"
 
 ### Save-VSCodeExtension
 
-Downloads one or more VS Code extensions as `.vsix` files. Accepts pipeline input from `Find-VSCodeExtension` or a direct URL.
-
-**Syntax**
+Downloads one or more VS Code extensions as `.vsix` files. Accepts pipeline input from `Find-VSCodeExtension` or a direct URL. Use `-Destination` to specify the output folder (defaults to current directory).
 
 ```powershell
-# From extension object (pipeline)
-Save-VSCodeExtension -Extension <PSCustomObject[]> [-Destination <string>]
-
-# From URL
-Save-VSCodeExtension -Url <string[]> [-Destination <string>]
-```
-
-**Parameters**
-
-| Parameter | Description | Default |
-|---|---|---|
-| `-Extension` | Extension object(s) from `Find-VSCodeExtension` | *(required)* |
-| `-Url` | Direct VSIX download URL(s) | *(required in URL mode)* |
-| `-Destination` | Folder to save the `.vsix` file(s) | Current directory |
-
-**Examples**
-
-```powershell
-# Save a specific extension to C:\vsix
 Find-VSCodeExtension -ExtensionId "eamodio.gitlens" | Save-VSCodeExtension -Destination C:\vsix
-
-# Save multiple search results
 Find-VSCodeExtension -Query "python" -PageSize 3 | Save-VSCodeExtension -Destination C:\vsix
-
-# Save from a direct URL
-Save-VSCodeExtension -Url "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/eamodio/vsextensions/gitlens/16.3.0/vspackage"
 ```
 
 ---
 
 ### Install-VSCodeExtension
 
-Installs a VS Code extension using the `code` CLI. Can install directly from a pipeline extension object, a VSIX URL, or a local `.vsix` file.
-
-**Syntax**
+Installs a VS Code extension using the `code` CLI from a pipeline extension object, a VSIX URL, or a local `.vsix` file. Use `-CodeExecutable` to specify a non-default `code` binary.
 
 ```powershell
-# From extension object (pipeline)
-Install-VSCodeExtension -Extension <PSCustomObject> [-Destination <string>] [-CodeExecutable <string>]
-
-# From URL
-Install-VSCodeExtension -Url <string> [-Destination <string>] [-CodeExecutable <string>]
-
-# From local file
-Install-VSCodeExtension -File <string> [-CodeExecutable <string>]
-```
-
-**Parameters**
-
-| Parameter | Description | Default |
-|---|---|---|
-| `-Extension` | Extension object from `Find-VSCodeExtension` | *(required)* |
-| `-Url` | VSIX download URL | *(required in URL mode)* |
-| `-File` | Path to a local `.vsix` file | *(required in file mode)* |
-| `-Destination` | Temp folder for downloaded VSIX | `$env:TEMP` |
-| `-CodeExecutable` | Path to the `code` binary | Auto-detected via `Get-Command` |
-
-**Examples**
-
-```powershell
-# Find and install in one pipeline
 Find-VSCodeExtension -ExtensionId "eamodio.gitlens" | Install-VSCodeExtension
-
-# Install from a local VSIX file
 Install-VSCodeExtension -File "C:\vsix\eamodio.gitlens-16.3.0.vsix"
-
-# Install from a direct URL
 Install-VSCodeExtension -Url "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/eamodio/vsextensions/gitlens/16.3.0/vspackage"
 ```
 
@@ -163,34 +72,10 @@ Install-VSCodeExtension -Url "https://marketplace.visualstudio.com/_apis/public/
 
 ### Uninstall-VSCodeExtension
 
-Uninstalls a VS Code extension by its `publisher.name` ID using the `code` CLI.
-
-**Syntax**
+Uninstalls a VS Code extension by its `publisher.name` ID using the `code` CLI. Accepts multiple IDs and pipeline input from `Get-VSCodeExtension`.
 
 ```powershell
-Uninstall-VSCodeExtension -Extension <string> [-CodeExecutable <string>]
-```
-
-**Parameters**
-
-| Parameter | Description | Default |
-|---|---|---|
-| `-Extension` | The `publisher.name` ID of the extension to remove | *(required)* |
-| `-CodeExecutable` | Path to the `code` binary | Auto-detected via `Get-Command` |
-
-**Examples**
-
-```powershell
-# Uninstall GitLens
-Uninstall-VSCodeExtension -Extension "eamodio.gitlens"
-
-# Uninstall multiple extensions directly
 Uninstall-VSCodeExtension -Extension "eamodio.gitlens","ms-python.python"
-
-# Pipe from Get-VSCodeExtension
-Get-VSCodeExtension -ExtensionId "eamodio.gitlens" | Uninstall-VSCodeExtension
-
-# Uninstall all extensions from a specific publisher
 Get-VSCodeExtension | Where-Object Name -like 'ms-python.*' | Uninstall-VSCodeExtension
 ```
 
@@ -198,36 +83,11 @@ Get-VSCodeExtension | Where-Object Name -like 'ms-python.*' | Uninstall-VSCodeEx
 
 ### Get-VSCodeExtension
 
-Returns VS Code extensions currently installed in the local VS Code instance by invoking the `code --list-extensions` CLI command.
-
-**Syntax**
+Returns VS Code extensions installed in the local VS Code instance via `code --list-extensions`. Filter by `-ExtensionId` or include version info with `-IncludeVersions`. Output properties: `Name`, `Version`.
 
 ```powershell
-Get-VSCodeExtension [[-ExtensionId] <string[]>] [-IncludeVersions]
-```
-
-**Parameters**
-
-| Parameter | Description | Default |
-|---|---|---|
-| `-ExtensionId` | Filter to specific extension ID(s) in `publisher.name` format | All installed extensions |
-| `-IncludeVersions` | Populate the `Version` property via `--show-versions` | `$false` |
-
-**Output properties:** `Name`, `Version`
-
-**Examples**
-
-```powershell
-# List all installed extensions
-Get-VSCodeExtension
-
-# List all installed extensions with versions
 Get-VSCodeExtension -IncludeVersions
-
-# Check if a specific extension is installed
 Get-VSCodeExtension -ExtensionId "eamodio.gitlens" -IncludeVersions
-
-# Pipe to Uninstall-VSCodeExtension
 Get-VSCodeExtension -ExtensionId "eamodio.gitlens" | Uninstall-VSCodeExtension
 ```
     ]]></description>
