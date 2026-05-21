@@ -1,9 +1,9 @@
 #import-module au
 
-# Remove any stale AU functions left in scope from a previous run
-Remove-Item Function:au_SearchReplace -ErrorAction SilentlyContinue
-
 $moduleName = 'VSCodeMarketplace'
+
+# AU always calls au_SearchReplace; return empty hashtable as nothing in the install script needs patching
+function global:au_SearchReplace { @{} }
 
 function global:au_BeforeUpdate() {
     do {
