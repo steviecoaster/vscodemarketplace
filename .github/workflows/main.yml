@@ -1,0 +1,25 @@
+name: Chocolatey-AU Update
+
+on:
+  workflow_dispatch
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  update:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: steviecoaster/chocolatey-au-action@main
+        with:
+          package-paths: |
+            chocolatey/vscodemarketplace
+          push: true
+          api-key: ${{ secrets.CHOCO_API_KEY }}
+          test-install: true
+          commit-changes: true
+          commit-message: 'chore: Chocolatey-AU update [skip ci]'
